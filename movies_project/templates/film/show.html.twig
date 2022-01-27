@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <article>
+    <p><br/></p>
+        <h2>{{ film.id }}. {{ film.nom }}</h2>
+        <div class="content">
+            <img src="http://placehold.it/350x150" alt="">
+            <p><br/>{{ film.description | raw }}</p>
+            <div class="metadata">
+                    Note: {{ film.note }} 
+            </div>
+            <a href="{{ path('film_update', {'id':film.id}) }}" class="btn btn-primary">
+                    Update the Movie
+            </a>
+        </div>
+    </article>
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <section class="articles">
+
+        {% for film in films %}
+            <article>
+            <p><br/></p>
+                <h2>{{ film.nom }}</h2>
+                <div class="content">
+                    <img src="http://placehold.it/350x150" alt="">
+                    <p><br/>{{ film.description | raw }}</p>
+                    <a href="{{ path('film_show', {'id':film.id}) }}" class="btn btn-primary">
+                        Read More
+                    </a>
+                    <a href="{{ path('film_delete', {'id':film.id}) }}" class="btn btn-secondary">
+                        Delete the Movie
+                    </a>
+                    <div class="metadata">
+                        Note: {{ film.note }} 
+                    </div>
+                </div>
+            </article>
+        {% endfor %}
+    
+    </section>
+{% endblock %}

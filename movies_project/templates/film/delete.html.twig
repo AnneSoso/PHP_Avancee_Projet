@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formDelete 'bootstrap_4_layout.html.twig'%}
+
+{% block title %}Films List{% endblock %}
+
+{% block body %}
+    <p><br/></p>
+        <h1>Movie Deletion</h1>
+    
+    {{ form_start(formDelete) }}
+
+    {{ form_row(formDelete.codeAdmin, {'attr': {'placeholder' : "CODE"}}) }}
+   
+    <p><br/></p>
+    <button type="submit" class="btn btn-danger">
+        Delete the Movie
+    </button>
+
+    {{ form_end(formDelete) }}
+
+{% endblock %}

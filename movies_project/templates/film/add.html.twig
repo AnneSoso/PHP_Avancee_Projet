@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme formFilm 'bootstrap_4_layout.html.twig'%}
+
+{% block title %}Films List{% endblock %}
+
+{% block body %}
+    <p><br/></p>
+    {% if updateMode %}
+        <h1>Movie Update</h1>
+    {% else %}
+        <h1>Movie Addition</h1>
+    {% endif %}
+    
+    {{ form_start(formFilm) }}
+
+    {{ form_row(formFilm.email, {'attr': {'placeholder' : "Votre E-mail"}}) }}
+    {{ form_row(formFilm.nom, {'attr': {'placeholder' : "Nom du film"}}) }}
+    {{ form_row(formFilm.note, {'attr': {'placeholder' : "Note du film"}}) }}
+   
+    <p><br/></p>
+    <button type="submit" class="btn btn-secondary">
+    {% if updateMode %}
+        Update the Movie
+    {% else %}
+        Add the Movie
+    {% endif %}
+    </button>
+
+    {{ form_end(formFilm) }}
+
+{% endblock %}

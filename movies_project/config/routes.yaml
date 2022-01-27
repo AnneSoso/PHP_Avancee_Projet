@@ -1,0 +1,3 @@
+index:
+    path: /lucky/number #car nom de domaine : number
+    controller: App\Controller\LuckyController::number
